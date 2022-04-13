@@ -37,7 +37,7 @@ class S(BaseHTTPRequestHandler):
             pageHtml = pageHtml.replace("{TRANSLATED_TEXT}", translatedText)
             pageHtml = pageHtml.replace("{SPECIFY_LANGUAGE}", language)
             pageData = pageHtml.encode('utf-8')
-            print(translatedText)
+            f.close()
         self._set_response()
         self.wfile.write(pageData)
 
