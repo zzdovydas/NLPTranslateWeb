@@ -4,5 +4,6 @@ Projektas parašytas Python kalba naudojantis bibliotekas: googletrans, http.ser
 Projekto funkcionalumas: <br />
 * Googletrans bibilioteka, kuri leidžia naudotis Google translate API, kad išversti tekstą į kitas kalbas<br />
 * Web user interface. Paprasta naudotis, galima atsidaryti naršyklėje<br />
+* Lengvas UI koregavimas. UI parašytas HTML kalba.<br />
 * Web serveris, kuris apdoroja ateinančias užklausas ir išsiunčia išverstą tekstą<br />
 * Rezultatų vaizdavimas su spacy arba matlib ????????? Ką čia vaizduosime?<br />
