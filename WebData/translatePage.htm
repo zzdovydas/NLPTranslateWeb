@@ -1,51 +1,59 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <title>NLP Translate Web</title>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
 
-    <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  </head>
+  <title>NLP Translate Web</title>
 
-  <body>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
 
-    <header>
-      <!-- Fixed navbar -->
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/">Translate projektas</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarCollapse">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">Pagrindinis puslapis <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Apie mus</a>
-            </li>
-          </ul>
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="/">Translate projektas</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse"
+        aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Pagrindinis puslapis <span class="sr-only">(current)</span></a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main role="main" class="container pt-5">
+    <h1 class="mt-2">Vertimas iš lt kalbos į {SPECIFY_LANGUAGE} kalbą</h1>
+    <p class="lead">Matomas vertimas iš <code>lt</code> kalbos į <code>{SPECIFY_LANGUAGE}</code> kalbą</p>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Lietuviškas tekstas</label>
+      <textarea id="text" name="text" class="form-control" style="width: 100%;" rows="7">{ORIGINAL_TEXT}</textarea>
+      <label for="exampleFormControlSelect1" style="display: block;">Tekstas ({SPECIFY_LANGUAGE} kalba)</label>
+      <div class="row">
+        <div class="col-md-6">
+          <label for="exampleFormControlSelect1" style="display: block;">Google trans API</label>
+          <textarea id="text" name="text" class="form-control" style="width: 100%;"
+            rows="4">{TRANSLATED_TEXT_GOOGLE}</textarea>
         </div>
-      </nav>
-    </header>
+        <div class="col-md-6">
+          <label for="exampleFormControlSelect1" style="display: block;">Deepl API</label>
+          <textarea id="text" name="text" class="form-control" style="width: 100%;"
+            rows="4">{TRANSLATED_TEXT_DEEPL}</textarea>
+        </div>
+      </div>
+    </div>
+  </main>
+</body>
 
-    <!-- Begin page content -->
-    <main role="main" class="container pt-5">
-      <h1 class="mt-2">Vertimas iš lt kalbos į {SPECIFY_LANGUAGE} kalbą</h1>
-      <p class="lead">Matomas vertimas iš <code>lt</code> kalbos į <code>{SPECIFY_LANGUAGE}</code> kalbą</p>
-	  <div class="form-group">
-			<label for="exampleFormControlSelect1">Lietuviškas tekstas</label>
-			<textarea  id="text" name="text" class="form-control" style="width: 49%;" rows="7">{ORIGINAL_TEXT}</textarea>
-			<label for="exampleFormControlSelect1" style="display: block;">Tekstas ({SPECIFY_LANGUAGE} kalba)</label>
-			<textarea  id="text" name="text" class="form-control" style="width: 49%; display: inline;" rows="4">{TRANSLATED_TEXT_GOOGLE}</textarea>
-			<textarea  id="text" name="text" class="form-control" style="width: 49%; display: inline;" rows="4">{TRANSLATED_TEXT_DEEPL}</textarea>
-	</div>
-    </main>
-  </body>
 </html>
