@@ -41,9 +41,10 @@
       <p class="lead">Matomas vertimas iš <code>lt</code> kalbos į <code>{SPECIFY_LANGUAGE}</code> kalbą</p>
 	  <div class="form-group">
 			<label for="exampleFormControlSelect1">Lietuviškas tekstas</label>
-			<textarea  id="text" name="text" class="form-control" rows="7">{ORIGINAL_TEXT}</textarea>
-			<label for="exampleFormControlSelect1">Tekstas ({SPECIFY_LANGUAGE} kalba)</label>
-			<textarea  id="text" name="text" class="form-control" rows="7">{TRANSLATED_TEXT}</textarea>
+			<textarea  id="text" name="text" class="form-control" style="width: 49%;" rows="7">{ORIGINAL_TEXT}</textarea>
+			<label for="exampleFormControlSelect1" style="display: block;">Tekstas ({SPECIFY_LANGUAGE} kalba)</label>
+			<textarea  id="text" name="text" class="form-control" style="width: 49%; display: inline;" rows="4">{TRANSLATED_TEXT_GOOGLE}</textarea>
+			<textarea  id="text" name="text" class="form-control" style="width: 49%; display: inline;" rows="4">{TRANSLATED_TEXT_DEEPL}</textarea>
 	</div>
     </main>
   </body>
