@@ -17,7 +17,7 @@ class S(BaseHTTPRequestHandler):
             pageHtml = (f.read()).decode()
             pageBytes = (pageHtml.replace("<REPLACE_WITH_LANGUAGES>", translate.getSupportedLanguagesForSelect())).encode()
             f.close()
-        self.wfile.write(pageBytes)
+            self.wfile.write(pageBytes)
 
     def do_POST(self):
         content_length = int(self.headers['Content-Length']) # <--- Gets the size of data
@@ -30,11 +30,12 @@ class S(BaseHTTPRequestHandler):
             language = splitData[0].split('=')[1]
             text = splitData[1].split('=')[1]
             text = text.replace("\r", "")
-            translatedText = translate.translate(language, text)
+            translated_google, translated_deepl = translate.translate(language, text)
             f = open("WebData/translatePage.htm", "rb")
             pageHtml = (f.read()).decode()
             pageHtml = pageHtml.replace("{ORIGINAL_TEXT}", text)
-            pageHtml = pageHtml.replace("{TRANSLATED_TEXT}", translatedText)
+            pageHtml = pageHtml.replace("{TRANSLATED_TEXT_GOOGLE}", translated_google)
+            pageHtml = pageHtml.replace("{TRANSLATED_TEXT_DEEPL}", translated_deepl)
             pageHtml = pageHtml.replace("{SPECIFY_LANGUAGE}", language)
             pageData = pageHtml.encode('utf-8')
             f.close()
