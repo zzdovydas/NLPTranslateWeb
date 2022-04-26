@@ -48,6 +48,7 @@ def formatResultPage(post_data):
     text = splitData[1].split('=')[1]
     text = text.replace("\r", "")
     translated_google, translated_deepl = translate.translate(language, text)
+    if language[:3] == 'gt:': language = language[3:]
     f = open("WebData/translatePage.htm", "rb")
     pageHtml = (f.read()).decode()
     pageHtml = pageHtml.replace("{ORIGINAL_TEXT}", text)
